@@ -4,7 +4,14 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 const nameBlock = document.querySelector('.name');
 
-const userName = prompt('Din namn:');
+//Tillåt inte tom inmatning
+let userName;
+do{
+    userName = prompt('Din namn:');
+}
+while(!userName);
+
+
 nameBlock.innerHTML = `${userName}`;
 
 form.addEventListener('submit', (e)=>{
